@@ -2,6 +2,7 @@
   "name": "hiiicomtw/breadcrumb-for-laravel",
   "description" : "A simple breadcrumb for laravel.",
   "keywords" : ["laravel", "breadcrumb"],
+  "homepage": "https://www.hiii.com.tw/",
   "authors": [
     {
       "name": "Hiiicomtw",

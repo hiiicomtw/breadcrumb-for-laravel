@@ -1,0 +1,17 @@
+{
+  "name": "hiiicomtw/breadcrumb-for-laravel",
+  "description" : "A simple breadcrumb for laravel.",
+  "keywords" : ["laravel", "breadcrumb"],
+  "authors": [
+    {
+      "name": "Hiiicomtw",
+      "email": "hiiicomtw@gmail.com"
+    }
+  ],
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "Hiiicomtw\\Breadcrumb\\": "src"
+    }
+  }
+}

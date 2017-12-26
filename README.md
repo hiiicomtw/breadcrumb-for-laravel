@@ -1,7 +1,7 @@
 # breadcrumb-for-laravel
 A simple breadcrumb for laravel.
 ## Installation
-    composer require hiiicomtw/breadcrumb-for-laravel
+    composer require hiiicomtw/breadcrumb-for-laravel:dev-master
 ## Configuration
 
 ### config/app.php
@@ -18,7 +18,7 @@ aliases:
 ```
 
 ### config/breadcrumb.php
-You can change the **"default-template"** key by value **'template'** 、 **'sample'** or **'backend'**
+You can change the **"default-template"** key by value **'breadcrumb::template'** 、 **'breadcrumb::sample'** or **'breadcrumb::backend'**
 
     php artisan vendor:publish
 

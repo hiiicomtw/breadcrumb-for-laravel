@@ -2,8 +2,6 @@
 
 namespace Hiiicomtw\Breadcrumb;
 
-use Exception;
-
 class Breadcrumb
 {
 
@@ -31,12 +29,12 @@ class Breadcrumb
      * @param string   $name
      * @param Callable $callback
      *
-     * @throws Exception
+     * @throws FileNotFoundException
      */
     public function define($name, $callback)
     {
         if (array_key_exists($name, $this->callbacks)) {
-            throw new Exception("The breadcrumb ($name) has been defined.");
+            throw new FileNotFoundException("The breadcrumb ($name) has been defined.");
         }
 
         $this->callbacks[$name] = $callback;
@@ -49,7 +47,7 @@ class Breadcrumb
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      *
-     * @throws Exception
+     * @throws FileNotFoundException
      */
     public function render($name)
     {
@@ -58,7 +56,7 @@ class Breadcrumb
                 return null;
             }
 
-            throw new Exception("Breadcrumb $name is not found.");
+            throw new FileNotFoundException("Breadcrumb $name is not found.");
         }
 
         $parameters = array_slice(func_get_args(), 1);

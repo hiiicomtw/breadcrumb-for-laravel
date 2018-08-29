@@ -45,6 +45,10 @@ class BreadcrumbServiceProvider extends ServiceProvider
             $this->config => config_path('breadcrumb.php')
         ], 'breadcrumb');
 
+        $this->publishes([
+            __DIR__.'/../view' => resource_path('views/vendor/breadcrumb'),
+        ]);
+
         if (!$this->checkBreadcrumbFileExist()) {
             throw new FileNotFoundException('The Breadcrumb file is not found in ' . config('breadcrumb.breadcrumb-file-path'));
         }
@@ -70,7 +74,8 @@ class BreadcrumbServiceProvider extends ServiceProvider
     public function register()
     {
         $this->mergeConfigFrom($this->config, 'breadcrumb');
-        $this->loadViewsFrom(__DIR__ . '/../view', 'breadcrumb');
+
+        $this->loadViewsFrom(resource_path('views/vendor/breadcrumb'), 'breadcrumb');
 
         $this->app->singleton(Breadcrumb::class, function ($app) {
             $breadcrumb = new Breadcrumb();

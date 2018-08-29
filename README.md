@@ -29,6 +29,10 @@ return [
     'ignore-undefined-breadcrumb' => false
 ];
 ```
+
+### views/vendor/breadcrumb
+You can edit the views where in **"resources/views/vendor"**
+
 ## Base Usage
 1. Create the breadcrumb file in the **"breadcrumb-file-path"**.
 
@@ -85,5 +89,5 @@ return [
 1. The breadcrumb use the special template.blade.php in resources/views.
 
     ```php
-    {!! Breadcrumbs::setTemplate('template')->render('home') !!}
+    {!! Breadcrumbs::setTemplate('path/to/view')->render('home') !!}
     ```

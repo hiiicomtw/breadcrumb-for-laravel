@@ -1,15 +1,15 @@
-<ol class="breadcrumb">
-    @foreach ($breadcrumbs as $index => $breadcrumb)
-        <li class="breadcrumb-item {{ ($index+1)== count((array)$breadcrumbs) ? 'active' : '' }}">
-            @if($index==0)
-                <a href="{{ $breadcrumb->url }}">
-                    <i class="fa fa-dashboard"></i> {{ $breadcrumb->title }}
-                </a>
-            @else
-                <a href="{{ $breadcrumb->url }}">
-                    {{ $breadcrumb->title }}
-                </a>
-            @endif
-        </li>
-    @endforeach
-</ol>
+@if ($breadcrumbs)
+        <ol class="breadcrumb_pagetag">
+                @foreach ($breadcrumbs as $index => $breadcrumb)
+                        <li>
+                                @if ($breadcrumb->url)
+                                        <a href="{{ $breadcrumb->url }}" title="{{ $breadcrumb->title }}">
+                                                {{ $breadcrumb->title }}
+                                        </a>
+                                @else
+                                        {{ $breadcrumb->title }}
+                                @endif
+                        </li>
+                @endforeach
+        </ol>
+@endif

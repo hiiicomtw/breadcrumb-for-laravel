@@ -46,7 +46,7 @@ class BreadcrumbServiceProvider extends ServiceProvider
         ], 'breadcrumb');
 
         $this->publishes([
-            __DIR__.'/../view' => resource_path('views/vendor/breadcrumb'),
+            __DIR__.'/../view' => base_path('resources/views/vendor/breadcrumb'),
         ]);
 
         if (!$this->checkBreadcrumbFileExist()) {
@@ -75,7 +75,7 @@ class BreadcrumbServiceProvider extends ServiceProvider
     {
         $this->mergeConfigFrom($this->config, 'breadcrumb');
 
-        $this->loadViewsFrom(resource_path('views/vendor/breadcrumb'), 'breadcrumb');
+        $this->loadViewsFrom(base_path('resources/views/vendor/breadcrumb'), 'breadcrumb');
 
         $this->app->singleton(Breadcrumb::class, function ($app) {
             $breadcrumb = new Breadcrumb();
